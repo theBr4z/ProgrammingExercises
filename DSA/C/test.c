@@ -1,27 +1,38 @@
-/*
-
-*/
-
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
 
-
-void inserevalor(int valor,int array[],int *qtd){
-    printf("%d\n",*qtd);
-    array[*qtd] = valor;
-    (*qtd)++;
+void TrocaValor(int *a, int *b)
+{
+    int aux = *b;
+    *b = *a;
+    *a = aux;
 }
 
-int main(){
-    
-    int array[5];
-    int qtd = 0;
+void MinMax(int vet[], int tam, int *min, int *max)
+{
+    *min = vet[0];
+    *max = vet[0];
+    for (int i = 0; i < tam; i++)
+    {
+        if (vet[i] > *max)
+            *max = vet[i];
+        else if (vet[i] < *min)
+            *min = vet[i];
+    }
+}
 
-    inserevalor(40,array,&qtd);
-    inserevalor(69,array,&qtd);
-    inserevalor(15,array,&qtd);
-    inserevalor(16,array,&qtd);
-    inserevalor(2,array,&qtd);
-    
-    return 0;
+void ZeraVetor(int *vet, int tam)
+{
+    for (int i = 0; i < tam; i++)
+    {
+        vet[i] = 0;
+    }
+}
+
+void main()
+{
+    int vet[5] = {5, 3, 2, 1, 5}, *p;
+    p = vet; // O ponteiro está apontando para o endereço da memória
+    printf("%d", *(p + 1));
+    return;
 }
