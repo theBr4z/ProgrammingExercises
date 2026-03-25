@@ -6,6 +6,7 @@ void TrocaValor(int *a, int *b)
     int aux = *b;
     *b = *a;
     *a = aux;
+    return;
 }
 
 void MinMax(int vet[], int tam, int *min, int *max)
@@ -19,20 +20,43 @@ void MinMax(int vet[], int tam, int *min, int *max)
         else if (vet[i] < *min)
             *min = vet[i];
     }
+    return;
 }
 
-void ZeraVetor(int *vet, int tam)
+void ZeraTudo(int *v, int tam)
 {
     for (int i = 0; i < tam; i++)
     {
-        vet[i] = 0;
+        v[i] = 0;
     }
+    return;
+}
+
+void ExibeVetor(int *b, int tam)
+{
+    for (int i = 0; i < tam; i++)
+    {
+        printf("%d ", *(b + i));
+    }
+    return;
+}
+
+int Comprimento(char *cores, char *cores2)
+{
+
+    do
+    {
+        *(cores2++) = *cores;
+    } while (*(t++));
+
+    return n;
 }
 
 void main()
 {
-    int vet[5] = {5, 3, 2, 1, 5}, *p;
-    p = vet; // O ponteiro está apontando para o endereço da memória
-    printf("%d", *(p + 1));
+
+    char *cores[] = {"vermelho", "azul", "amarelo", "verde"};
+    char *cores2;
+    printf("%d\n", Comprimento(cores, cores2));
     return;
 }
