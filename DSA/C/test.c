@@ -41,22 +41,95 @@ void ExibeVetor(int *b, int tam)
     return;
 }
 
-int Comprimento(char *cores, char *cores2)
+void Incrementa(int *p)
 {
 
-    do
-    {
-        *(cores2++) = *cores;
-    } while (*(t++));
+    (*p)++;
 
-    return n;
+    return;
+}
+
+void Decrementa(int *p)
+{
+    (*p)--;
+    return;
+}
+
+typedef struct No
+{
+    int valor;
+    struct No *ant;
+    struct No *prox;
+} No;
+
+void InsereValor(No **head, int v)
+{
+    No *novo = (No *)malloc(sizeof(No));
+    novo->valor = v;
+    novo->ant = NULL;
+    novo->prox = *head;
+
+    if (*head != NULL)
+        (*head)->ant = novo;
+
+    *head = novo;
+}
+
+void Imprimir(No *p)
+{
+    printf("NULL");
+    while (p != NULL)
+    {
+        printf("<-[%d]->", p->valor);
+        p = p->prox;
+    }
+    printf("NULL");
+}
+
+void rimirpmi(No *p)
+{
+    printf("NULL");
+    while (p->prox != NULL)
+        p = p->valor;
+    while (p->ant != NULL)
+    {
+        printf("<-[%d]->", p->valor);
+        p = p->ant;
+    }
+    printf("NULL");
+}
+
+void inserir_fim(No **head, int v)
+{
+
+    No *novo = (No *)malloc(sizeof(No));
+    novo->valor = v;
+    novo->prox = NULL;
+
+    if (*head == NULL)
+    {
+        novo->ant = NULL;
+        *head = novo;
+        return;
+    }
+
+    No *p = *head;
+    while (p->prox != NULL)
+    {
+        p = p->prox;
+    }
+
+    p->prox = novo;
+    novo->ant = p;
 }
 
 void main()
 {
-
-    char *cores[] = {"vermelho", "azul", "amarelo", "verde"};
-    char *cores2;
-    printf("%d\n", Comprimento(cores, cores2));
+    No *head = NULL;
+    InsereValor(&head, 2);
+    InsereValor(&head, 27);
+    InsereValor(&head, 9);
+    InsereValor(&head, 16);
+    Imprimir(head);
     return;
 }

@@ -3,3 +3,6 @@
 bin/
 *.csproj
 .vscode
+obj/
+App.config
+.vs/
