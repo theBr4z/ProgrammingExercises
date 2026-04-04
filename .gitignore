@@ -1,7 +1,6 @@
 .trash
 *.exe
 bin/
-*.csproj
 .vscode
 obj/
 App.config
