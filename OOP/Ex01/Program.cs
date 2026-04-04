@@ -1,30 +1,24 @@
-﻿using Exercicios;
-using System;
-using System.Globalization;
+﻿using System;
 
-namespace ExerciciosGeral {
-    class ex01 {
+namespace Ex01 {
+    class Program {
         static void Main(String[] args) {
-            Pessoa x, y;
-            x = new Pessoa();
-            y = new Pessoa();
+            Pessoa p1, p2;
             Console.WriteLine("Dados da primeira pessoa:");
-            Console.Write("Nome:");
-            x.Nome = Console.ReadLine();
-            Console.Write("Idade:");
-            x.Idade = int.Parse(Console.ReadLine());
-            Console.WriteLine("Dados da segunda pessoa:");
-            Console.Write("Nome:");
-            y.Nome = Console.ReadLine();
-            Console.Write("Idade:");
-            y.Idade = int.Parse(Console.ReadLine());
-            if (x.Idade > y.Idade) {
-                Console.WriteLine($"Pessoa Mais Velha:{x.Nome}");
+            Console.Write("Nome:"); string nome = Console.ReadLine();
+            Console.Write("Idade:"); int idade = int.Parse(Console.ReadLine());
+            p1 = new Pessoa(nome, idade);
+
+            Console.WriteLine("Dados da primeira pessoa:");
+            Console.Write("Nome:"); nome = Console.ReadLine();
+            Console.Write("Idade:"); idade = int.Parse(Console.ReadLine());
+            p2 = new Pessoa(nome, idade);
+
+            if (p1.Idade >= p2.Idade) {
+                Console.WriteLine($"Pessoa mais velha: {p1.Nome}");
             }
             else {
-                Console.WriteLine($"Pessoa Mais Velha:{y.Nome}");
+                Console.WriteLine($"Pessoa mais velha: {p2.Nome}");
             }
-
         }
-    }
-}
+    } }

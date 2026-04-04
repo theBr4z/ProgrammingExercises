@@ -1,20 +1,15 @@
-﻿using Ex03;
-using System;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Exercicio {
-    class Ex03 {
+namespace Ex03 {
+    class Program {
         static void Main(String[] args) {
-            Pessoa p1;
-            p1 = new Pessoa();
-
-            Console.Write("Digite seu nome:");
-            p1.Nome = Console.ReadLine();
-            Console.Write("Digite sua idade:");
-            p1.Idade = int.Parse(Console.ReadLine());
-            Console.Write("Digite sua altura:");
-            p1.Altura = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
-            p1.Apresentar();
+            Triangulo t1 = new Triangulo();
+            Console.WriteLine("Entre com as medidas do Triângulo N:");
+            t1.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            t1.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            t1.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double areaN = t1.Area();
+            Console.WriteLine($"Área do triângulo N: {areaN.ToString("F3",CultureInfo.InvariantCulture)});
         }
     }
 }
