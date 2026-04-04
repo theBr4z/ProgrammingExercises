@@ -1,5 +1,5 @@
 .trash
-.exe
+*.exe
 bin/
 *.csproj
 .vscode
